@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack-dev-server --config webpack.config.js --open"
+    "build": "webpack --config webpack.config.js --open",
+    "dev": "webpack-dev-server --config webpack.config.js --open"
   },
   "keywords": [],
   "devDependencies": {
