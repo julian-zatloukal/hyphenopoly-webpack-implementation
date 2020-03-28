@@ -1,9 +1,8 @@
-'use strict'
+'use strict';
 
-import $ from 'jquery'
-window.$ = window.jQuery = $
+import $ from 'jquery';
+window.$ = window.jQuery = $;
 loadHyphenopoly();
-// Load other modules
 
 function loadHyphenopoly() {
     var Hyphenopoly = {
@@ -17,7 +16,7 @@ function loadHyphenopoly() {
             patterndir: './js/hyphenopoly/patterns/',   //path to the directory of pattern files
             maindir: './js/hyphenopoly/',               //path to the directory where the other ressources are stored
         },
-    }
-    window.Hyphenopoly = Hyphenopoly
-    const hyphenopoly_loader = require('hyphenopoly/Hyphenopoly_Loader')
+    };
+    window.Hyphenopoly = Hyphenopoly;
+    const hyphenopoly_loader = require('hyphenopoly/Hyphenopoly_Loader');
 }

@@ -15,9 +15,6 @@ module.exports = {
         filename: 'js/[name].[contentHash].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    node: {
-        fs: 'empty',
-    },
     optimization: {
         minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
         runtimeChunk: 'single',
@@ -37,13 +34,6 @@ module.exports = {
             },
             {
                 context: './',
-                from: 'node_modules/hyphenopoly/Hyphenopoly_Loader.js',
-                to: './js/hyphenopoly/',
-                force: true,
-                flatten: true,
-            },
-            {
-                context: './',
                 from: 'node_modules/hyphenopoly/patterns/{es,it,de,en-us}.wasm',
                 to: './js/hyphenopoly/patterns/',
                 globOptions:{
@@ -55,15 +45,6 @@ module.exports = {
         ]),
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            minify: {
-                removeAttributeQuotes: true,
-                collapseWhitespace: true,
-                removeComments: true,
-                removeRedundantAttributes: true,
-                removeScriptTypeAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                useShortDoctype: true,
-            },
             favicon: ''
         }),
     ],
