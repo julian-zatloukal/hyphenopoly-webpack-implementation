@@ -44,8 +44,11 @@ module.exports = {
             },
             {
                 context: './',
-                from: 'node_modules/hyphenopoly/patterns/*',
+                from: 'node_modules/hyphenopoly/patterns/{es,it,de,en-us}.wasm',
                 to: './js/hyphenopoly/patterns/',
+                globOptions:{
+                    extglob: true
+                },
                 force: true,
                 flatten: true,
             },
@@ -61,6 +64,7 @@ module.exports = {
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true,
             },
+            favicon: ''
         }),
     ],
     module: {
