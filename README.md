@@ -1,5 +1,5 @@
 # Hyphenopoly implementation with Webpack 4
-Alternative way to load Hyphenopoly for browsers into Webpack. It uses [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/) and [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/).
+Alternative way to load [Hyphenopoly](https://github.com/mnater/Hyphenopoly) for browsers into Webpack. It uses [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/) and [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/).
 
 ### Build the website
 ```bash
