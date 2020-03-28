@@ -1,6 +1,14 @@
 # Hyphenopoly implementation with Webpack 4
 Alternative way to load Hyphenopoly for browsers into Webpack. It uses [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/) and [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/).
 
+### Build the website
+```bash
+$ npm install       
+$ npm run build             # Build files into dist folder
+$ npm run dev               # Opens a Webpack Dev server, avoids CORS errors running locally
+```
+
+
 ### Vendor Javascript
 ```js
 function loadHyphenopoly() {
