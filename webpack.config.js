@@ -18,7 +18,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     optimization: {
-        minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
+        minimizer: [new TerserPlugin()],
         runtimeChunk: 'single',
     },
     performance: {
