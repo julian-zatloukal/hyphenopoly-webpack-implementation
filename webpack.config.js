@@ -4,10 +4,12 @@ const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackInjector = require('html-webpack-injector')
 
 module.exports = {
     entry: {
-        vendor: './src/vendor.js',
+        vendor_head: './src/vendor_head.js',
+        vendor_body: './src/vendor_body.js',
         main: './src/index.js',
     },
     mode: 'production',
@@ -20,7 +22,7 @@ module.exports = {
         runtimeChunk: 'single',
     },
     performance: {
-        hints: false
+        hints: false,
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -36,8 +38,8 @@ module.exports = {
                 context: './',
                 from: 'node_modules/hyphenopoly/patterns/{es,it,de,en-us}.wasm',
                 to: './js/hyphenopoly/patterns/',
-                globOptions:{
-                    extglob: true
+                globOptions: {
+                    extglob: true,
                 },
                 force: true,
                 flatten: true,
@@ -45,8 +47,10 @@ module.exports = {
         ]),
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            favicon: ''
+            favicon: '',
+            chunks: ['main', 'vendor_body', 'vendor_head'],
         }),
+        new HtmlWebpackInjector(),
     ],
     module: {
         rules: [
