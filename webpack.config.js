@@ -47,8 +47,7 @@ module.exports = {
         ]),
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            favicon: '',
-            chunks: ['main', 'vendor_body', 'vendor_head'],
+            favicon: ''
         }),
         new HtmlWebpackInjector(),
     ],
